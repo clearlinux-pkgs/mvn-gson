@@ -4,12 +4,15 @@
 #
 Name     : mvn-gson
 Version  : 2.2.4
-Release  : 2
+Release  : 3
 URL      : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
 Source0  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
-Source1  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.pom
-Source2  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
-Source3  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+Source1  : https://repo1.maven.org/maven2/com/google/code/gson/gson-parent/2.7/gson-parent-2.7.pom
+Source2  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.pom
+Source3  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
+Source4  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+Source5  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.7/gson-2.7.jar
+Source6  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.7/gson-2.7.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -27,6 +30,7 @@ data components for the mvn-gson package.
 
 
 %prep
+%setup -q -n META-INF
 
 %build
 
@@ -34,14 +38,23 @@ data components for the mvn-gson package.
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.2.4
 cp %{SOURCE0} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson-parent/2.7
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson-parent/2.7/gson-parent-2.7.pom
+
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.2.4
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.pom
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1
-cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7
+cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.pom
 
 
 %files
@@ -49,7 +62,10 @@ cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gs
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/com/google/code/gson/gson-parent/2.7/gson-parent-2.7.pom
 /usr/share/java/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
 /usr/share/java/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.pom
 /usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.jar
 /usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
+/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar
+/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.pom
