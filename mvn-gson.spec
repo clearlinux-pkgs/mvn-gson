@@ -4,7 +4,7 @@
 #
 Name     : mvn-gson
 Version  : 2.2.4
-Release  : 3
+Release  : 4
 URL      : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
 Source0  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
 Source1  : https://repo1.maven.org/maven2/com/google/code/gson/gson-parent/2.7/gson-parent-2.7.pom
