@@ -4,7 +4,7 @@
 #
 Name     : mvn-gson
 Version  : 2.2.4
-Release  : 4
+Release  : 5
 URL      : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
 Source0  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar
 Source1  : https://repo1.maven.org/maven2/com/google/code/gson/gson-parent/2.7/gson-parent-2.7.pom
@@ -13,6 +13,8 @@ Source3  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2
 Source4  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
 Source5  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.7/gson-2.7.jar
 Source6  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.7/gson-2.7.pom
+Source7  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
+Source8  : https://repo1.maven.org/maven2/com/google/code/gson/gson/2.8.5/gson-2.8.5.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -56,6 +58,12 @@ cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gs
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7
 cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.8.5
+cp %{SOURCE7} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.8.5
+cp %{SOURCE8} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -69,3 +77,5 @@ cp %{SOURCE6} %{buildroot}/usr/share/java/.m2/repository/com/google/code/gson/gs
 /usr/share/java/.m2/repository/com/google/code/gson/gson/2.3.1/gson-2.3.1.pom
 /usr/share/java/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.jar
 /usr/share/java/.m2/repository/com/google/code/gson/gson/2.7/gson-2.7.pom
+/usr/share/java/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar
+/usr/share/java/.m2/repository/com/google/code/gson/gson/2.8.5/gson-2.8.5.pom
